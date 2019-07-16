@@ -39,11 +39,13 @@ class AdminSiteTests(TestCase):
 
 def test_user_change_page(self):
     '''test that the user edit page works'''
+
+    '''generate a URL'''
     url = reverse('admin:core_user_change', args=[self.user_id])
     # /admin/core/user/1
 
     '''return the response of an HTTP GET request'''
     resp = self.client.get(url)
 
-    '''Should be HTTP Status Codee 200, meaning the request has succeeded'''
+    '''Should be HTTP Status Code 200, meaning the request has succeeded'''
     self.assertEqual(resp.status_code, 200)
