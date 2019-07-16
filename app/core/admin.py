@@ -30,28 +30,5 @@ class UserAdmin(BaseUserAdmin):
         (_('Important dates'), {'fields': ('last_login',)}),
     )
 
-#     fieldsets = (
-#     '''using gettext for the fieldset naming conventions'''
-#
-#     '''top of the page, no title'''
-#     (None, {'fields': ('email', 'password')}),
-#
-#     '''User Personal Info section'''
-#     (_('Personal Info'), {'fields': ('name',)}),
-#
-#     '''User Permissions section'''
-#     (
-#         _('Permissions'),
-#         {
-#             'fields': (
-#                 'is_active',
-#                 'is_staff',
-#                 'is_superuser',
-#             )
-#         }
-#     ),
-#     '''User Important Dates section'''
-#     (_('Important dates'), {'fields': ('last_login',)}),
-# )
 
 admin.site.register(models.User, UserAdmin)

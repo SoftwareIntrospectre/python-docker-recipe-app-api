@@ -49,3 +49,12 @@ def test_user_change_page(self):
 
     '''Should be HTTP Status Code 200, meaning the request has succeeded'''
     self.assertEqual(resp.status_code, 200)
+
+
+def test_create_user_page(self):
+    '''Test that the create user page works'''
+    url = reverse('admin:core_user_add')
+
+    resp = self.client.get(url)
+
+    self.assertEqual(resp.status_code, 200)
