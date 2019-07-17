@@ -30,5 +30,13 @@ class UserAdmin(BaseUserAdmin):
         (_('Important dates'), {'fields': ('last_login',)}),
     )
 
+    # used to customize the attributes for the user authentication
+    # https://docs.djangoproject.com/en/2.2/topics/auth/customizing/
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide'), #allows input field to be full-screen
+            'fields': ('email', 'password1', 'password2')
+        }),
+    )
 
 admin.site.register(models.User, UserAdmin)
